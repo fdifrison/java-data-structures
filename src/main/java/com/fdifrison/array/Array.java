@@ -1,5 +1,7 @@
 package com.fdifrison.array;
 
+import java.util.ArrayList;
+
 /**
  * Arrays are containers object of fixed size and single type of element.
  *
@@ -13,25 +15,37 @@ package com.fdifrison.array;
  * time.</li>
  * <li>Retrieving an arbitrary item has also O(n) since we need to scan the whole
  * array</li>
- * <li>Removing a specific element has O(1) since we can again access it by index</li>
+ * <li>Removing and inserting an element at the end of the array has O(1) while perform the same operation an arbitrary
+ * element has O(n) since we need to shift all the other elements in the array</li>
  * </ul>
  */
 public class Array {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		// we need a fix size in advice, arrays are not dynamic datastructures
-		int[] nums = new int[10];
-		// insertion has constant time
-		for (int j = 0; j < nums.length; j++) {
-			nums[j] = j;
-		}
-		// retrieval in linear time
-		for (int i : nums) {
-			if (i == 8)
-				System.out.printf("found %s", i);
-		}
+        // we need a fix size in advice, arrays are not dynamic datastructures
+        int[] nums = new int[10];
+        // insertion has constant time
+        for (int j = 0; j < nums.length; j++) {
+            nums[j] = j;
+        }
+        // retrieval in linear time
+        for (int i : nums) {
+            if (i == 8) System.out.printf("found %s\n", i);
+        }
 
-	}
+        // ArrayList are the Java wrapper around array
+        var names = new ArrayList<String>();
+        names.add("John");
+        names.add("Jane");
+        names.add("Bob");
 
+        // linear time due to the shifting in position of the other elements
+        names.remove("John");
+        names.add(1, "Jake");
+
+        System.out.println(names);
+
+
+    }
 }
