@@ -45,7 +45,5 @@ public class Array {
         names.add(1, "Jake");
 
         System.out.println(names);
-
-
     }
 }
