@@ -7,9 +7,8 @@ public class Palindrome {
 
     public static void main(String[] args) {
         var tests = List.of("civic", "radar", "level", "rotor", "kayak", "madam");
-        var isPalindrome = tests.stream()
-                .map(t -> Map.entry(t, solvePalindromeBrutal(t)))
-                .toList();
+        var isPalindrome =
+                tests.stream().map(t -> Map.entry(t, solvePalindromeBrutal(t))).toList();
         System.out.println(isPalindrome);
     }
 

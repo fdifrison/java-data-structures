@@ -10,7 +10,6 @@ public class Anagrams {
         var isSolvedWithSort = solveWithSort(word, anagram);
         var isSolvedBrutally = solveBrutally(word, anagram);
         System.out.println(isSolvedWithSort && isSolvedBrutally ? "Is an anagram" : "Is not an anagram");
-
     }
 
     private static boolean solveWithSort(char[] s1, char[] s2) {

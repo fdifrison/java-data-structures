@@ -7,7 +7,7 @@ import java.util.ArrayList;
  *
  * <ul>
  * <li>The items in the array are located in the heap memory next to each other and
- * therefore can be accessed in O(1) time through their index.</li>
+ * therefore can be accessed in O(1) time through their index (Random indexing).</li>
  * <li>The reference to the array (i.e. the local variable to which the array is
  * associated) is stored in the stack memory.</li>
  * <li>Due to its fix size, resizing an array is an expensive operation since it requires
