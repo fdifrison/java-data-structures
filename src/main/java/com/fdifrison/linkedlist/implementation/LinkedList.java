@@ -1,5 +1,7 @@
 package com.fdifrison.linkedlist.implementation;
 
+import java.util.NoSuchElementException;
+
 public class LinkedList<T extends Comparable<T>> implements List<T> {
 
     private Node<T> head;
@@ -29,11 +31,12 @@ public class LinkedList<T extends Comparable<T>> implements List<T> {
             node.setLinkToNextNode(newNode);
             newNode.setLinkToNextNode(null);
         }
+        numElements++;
     }
 
     @Override
     public void remove(T data) {
-        if (head == null) return;
+        if (head == null) throw new NoSuchElementException();
         if (data.compareTo(head.getData()) == 0) {
             head = head.getLinkToNextNode();
         } else {
@@ -51,6 +54,7 @@ public class LinkedList<T extends Comparable<T>> implements List<T> {
             }
             current = next;
             next = next.getLinkToNextNode();
+            if (next == null) throw new NoSuchElementException();
         }
     }
 

@@ -10,6 +10,8 @@ public class Test {
         list.insertLast("Mike", list.getHead());
         list.traverse();
         list.remove("Jane");
+        list.traverse();
+        list.remove("J");
     }
 
 }
