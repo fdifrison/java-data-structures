@@ -1,4 +1,4 @@
-package com.fdifrison.array.exercise;
+package com.fdifrison.array;
 
 import java.util.List;
 import java.util.Map;

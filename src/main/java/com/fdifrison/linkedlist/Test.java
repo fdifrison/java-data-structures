@@ -1,4 +1,4 @@
-package com.fdifrison.linkedlist.implementation;
+package com.fdifrison.linkedlist;
 
 public class Test {
 

@@ -1,4 +1,4 @@
-package com.fdifrison.linkedlist.implementation;
+package com.fdifrison.linkedlist;
 
 /**
  * We want the implementation to be generic and each element in the node to be comparable types
