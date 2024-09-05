@@ -13,5 +13,4 @@ public class Test {
         list.traverse();
         list.remove("J");
     }
-
 }

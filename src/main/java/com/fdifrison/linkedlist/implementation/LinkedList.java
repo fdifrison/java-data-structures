@@ -58,7 +58,6 @@ public class LinkedList<T extends Comparable<T>> implements List<T> {
         }
     }
 
-
     @Override
     public void traverse() {
         if (head == null) return;
