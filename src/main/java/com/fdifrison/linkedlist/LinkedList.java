@@ -5,55 +5,60 @@ import java.util.NoSuchElementException;
 public class LinkedList<T extends Comparable<T>> implements List<T> {
 
     private Node<T> head;
-    private int numElements;
+    private int size;
 
     @Override
-    public void insert(T data) {
+    public void addFirst(T data) {
         if (head == null) {
             head = new Node<>(data);
         } else {
             insertFirst(data);
         }
-        numElements++;
+        size++;
     }
 
     private void insertFirst(T data) {
         var newNode = new Node<>(data);
-        newNode.setLinkToNextNode(head);
+        newNode.setNext(head);
         head = newNode;
     }
 
-    public void insertLast(T data, Node<T> node) {
-        if (node.getLinkToNextNode() != null) {
-            insertLast(data, node.getLinkToNextNode());
+    @Override
+    public void addLast(T data) {
+        insertLast(data, head);
+    }
+
+    private void insertLast(T data, Node<T> node) {
+        if (node.getNext() != null) {
+            insertLast(data, node.getNext());
         } else {
             var newNode = new Node<>(data);
-            node.setLinkToNextNode(newNode);
-            newNode.setLinkToNextNode(null);
+            node.setNext(newNode);
+            newNode.setNext(null);
         }
-        numElements++;
+        size++;
     }
 
     @Override
     public void remove(T data) {
         if (head == null) throw new NoSuchElementException();
         if (data.compareTo(head.getData()) == 0) {
-            head = head.getLinkToNextNode();
+            head = head.getNext();
         } else {
-            remove(data, head, head.getLinkToNextNode());
+            remove(data, head, head.getNext());
         }
     }
 
     private void remove(T data, Node<T> current, Node<T> next) {
         while (next != null) {
             if (data.compareTo(next.getData()) == 0) {
-                current.setLinkToNextNode(next.getLinkToNextNode());
+                current.setNext(next.getNext());
                 next = null; // to let gc remove the orphan element
-                numElements--;
+                size--;
                 return;
             }
             current = next;
-            next = next.getLinkToNextNode();
+            next = next.getNext();
             if (next == null) throw new NoSuchElementException();
         }
     }
@@ -62,16 +67,16 @@ public class LinkedList<T extends Comparable<T>> implements List<T> {
     public void traverse() {
         if (head == null) return;
         var node = head;
-        while (node.getLinkToNextNode() != null) {
+        while (node.getNext() != null) {
             System.out.println(node);
-            node = node.getLinkToNextNode();
+            node = node.getNext();
         }
         System.out.println(node.getData() + " -> null");
     }
 
     @Override
     public int size() {
-        return numElements;
+        return size;
     }
 
     public Node<T> getHead() {

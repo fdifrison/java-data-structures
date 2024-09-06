@@ -5,7 +5,7 @@ package com.fdifrison.linkedlist;
  */
 public class Node<T extends Comparable<T>> {
     private T data;
-    private Node<T> linkToNextNode;
+    private Node<T> next;
 
     public Node(T data) {
         this.data = data;
@@ -20,16 +20,16 @@ public class Node<T extends Comparable<T>> {
         return this;
     }
 
-    public Node<T> getLinkToNextNode() {
-        return linkToNextNode;
+    public Node<T> getNext() {
+        return next;
     }
 
-    public void setLinkToNextNode(Node<T> linkToNextNode) {
-        this.linkToNextNode = linkToNextNode;
+    public void setNext(Node<T> next) {
+        this.next = next;
     }
 
     @Override
     public String toString() {
-        return data + " -> " + linkToNextNode.getData() + " ";
+        return data + " -> " + next.getData() + " ";
     }
 }
