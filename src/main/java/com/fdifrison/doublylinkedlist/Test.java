@@ -18,6 +18,5 @@ public class Test {
         list.remove("Jane");
         System.out.println("######");
         list.traverse();
-
     }
 }

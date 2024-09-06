@@ -14,9 +14,8 @@ public class Node<T extends Comparable<T>> {
     public String toString() {
         var prev = this.prev == null ? "null" : this.prev.getData();
         var next = this.next == null ? "null" : this.next.getData();
-        return  prev + " <- " + data + " -> " + next;
+        return prev + " <- " + data + " -> " + next;
     }
-
 
     public T getData() {
         return data;

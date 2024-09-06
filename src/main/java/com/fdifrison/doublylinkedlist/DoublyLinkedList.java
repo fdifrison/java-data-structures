@@ -1,7 +1,6 @@
 package com.fdifrison.doublylinkedlist;
 
 import com.fdifrison.linkedlist.List;
-
 import java.util.NoSuchElementException;
 
 public class DoublyLinkedList<T extends Comparable<T>> implements List<T> {
@@ -9,7 +8,6 @@ public class DoublyLinkedList<T extends Comparable<T>> implements List<T> {
     private Node<T> head;
     private Node<T> tail;
     private int size;
-
 
     @Override
     public void addFirst(T data) {
@@ -55,7 +53,8 @@ public class DoublyLinkedList<T extends Comparable<T>> implements List<T> {
             while (node != null) {
                 if (node.getData().compareTo(data) == 0) {
                     var next = node.getNext();
-                    node = node.getPrev();;
+                    node = node.getPrev();
+                    ;
                     node.setNext(next);
                     next.setPrev(node);
                 }
