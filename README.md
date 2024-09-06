@@ -35,4 +35,15 @@ because it points to a null. Inserting an element in first position has now O(1)
 elements but just update the reference to the head node; on the contrary, inserting an element at the end of the list
 has O(n) since we have to traverse the whole list to update the reference of the former last node. Therefore, running
 time is poorly predictable since it depends greatly on the operation performed by the user.
-**Java implementation of linked list has a pointer also to the last element of the list, therefore halving the problem**
+**Java implementation of linked list has is actually a doubly linked list**
+
+## Doubly Linked List
+
+* **find/insert/remove item first/last position: O(1)**
+* **find/insert/remove item arbitrary position: O(n)**
+
+Very similar to Linked List, Doubly Linked List is a dynamic datastructures that has a pointer both to the next and the
+previous element; this increase the size in memory but gives some advantages. We have a reference to both the head and
+the tail of the list, both having a null reference, respectively the previous for the head and the next for the tail.
+Thanks to the double reference we can traverse the list in both direction and insertion/deletion operation have O(1)
+both at the head and at the tail.
