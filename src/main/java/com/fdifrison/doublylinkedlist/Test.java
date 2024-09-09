@@ -10,13 +10,8 @@ public class Test {
         list.addLast("Mary");
 
         list.traverse();
-
-        list.remove("Bob");
         System.out.println("######");
-        list.traverse();
-
-        list.remove("Jane");
-        System.out.println("######");
+        list.reverse();
         list.traverse();
     }
 }

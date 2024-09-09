@@ -70,11 +70,25 @@ public class DoublyLinkedList<T extends Comparable<T>> implements List<T> {
             System.out.println(node);
             node = node.getNext();
         }
-        System.out.println(node.getPrev().getData() + " <- " + node.getData() + " -> null");
+        System.out.println(node);
     }
 
     @Override
     public int size() {
         return size;
+    }
+
+    public void reverse() {
+        if (head == null) return;
+        var node = head;
+        var prev = node.getPrev();
+        var next = node.getNext();
+        while (node != null) {
+            next = node.getNext();
+            node.setNext(prev);
+            prev = node;
+            node = next;
+        }
+        head = prev;
     }
 }

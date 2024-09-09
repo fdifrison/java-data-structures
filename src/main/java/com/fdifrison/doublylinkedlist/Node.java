@@ -10,11 +10,15 @@ public class Node<T extends Comparable<T>> {
         this.data = data;
     }
 
-    @Override
-    public String toString() {
+    public String toStringEnhanced() {
         var prev = this.prev == null ? "null" : this.prev.getData();
         var next = this.next == null ? "null" : this.next.getData();
         return prev + " <- " + data + " -> " + next;
+    }
+
+    @Override
+    public String toString() {
+        return data.toString();
     }
 
     public T getData() {
