@@ -47,3 +47,26 @@ previous element; this increase the size in memory but gives some advantages. We
 the tail of the list, both having a null reference, respectively the previous for the head and the next for the tail.
 Thanks to the double reference we can traverse the list in both direction and insertion/deletion operation have O(1)
 both at the head and at the tail.
+
+## Stack
+
+Stack is an **abstract data type**, meaning that it defines a behavior that the algorithmic implementation must satisfy.
+The stack is based on the **LIFO** principle: **L**ast **I**tem to be added is the **F**irst item to go **O**ut.
+The main operation that has to define are **pop()** to get and remove the last inserted item, **push()** to add an item
+and the **peek()** witch get the first item (the last inserted one) but without removing it.
+
+### Stack memory
+
+The stack memory is that part of the RAM that is used by the JVM to store local variable and method calls (the method's
+stack frame that contains the method's variables). When a method is executed, its corresponding method's frame is popped
+from the stack. Stack memory is small in size but fast to access. If the stack memory is filled than we get the infamous
+StackOverFlow error, meaning that there is no more space to insert other method's frame.
+
+### Heap memory
+
+The heap memory is another part of the RAM which is used by the JVM to perform dynamic allocation of memory, i.e.
+storing objects (while the reference, i.e. the address of the object is stored in the heap, the object itself, i.e. the
+reference type is stored in the stack, even if the object is created as a local variable inside a method). Its size is
+way larger than the stack but its access time is also greatly slower. The heap memory is freed by the JVM calling the
+Garbage Collector to dispose an object whenever it is not used anymore (i.e. there is no live reference to it in the
+stack memory).
