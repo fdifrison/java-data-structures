@@ -1,4 +1,4 @@
-# Algorithms and Data structure in Java
+# Algorithms and Data structures in Java
 
 ## Array
 
@@ -70,3 +70,11 @@ reference type is stored in the stack, even if the object is created as a local 
 way larger than the stack but its access time is also greatly slower. The heap memory is freed by the JVM calling the
 Garbage Collector to dispose an object whenever it is not used anymore (i.e. there is no live reference to it in the
 stack memory).
+
+## Queue
+
+Queue is an **abstract data type**, meaning that it defines a behavior that the algorithmic implementation must satisfy.
+The queue is based on the **FIFO** principle: **F**irst **I**tem to be added is the **F**irst item to go **O**ut.
+The main operation that has to define are **dequeue()** to get and remove the first inserted item, **enqueue()** to add
+an item and the **peek()** witch get the first inserted item but without removing it. A common application of queues is
+multithreading, async tasks to ensure consistency and breath-first search algorithm.
