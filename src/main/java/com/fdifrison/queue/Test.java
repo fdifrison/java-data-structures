@@ -1,7 +1,5 @@
 package com.fdifrison.queue;
 
-import java.util.Queue;
-
 public class Test {
 
     public static void main(String[] args) {
@@ -20,6 +18,5 @@ public class Test {
         System.out.println("removing head -> " + queue.dequeue());
         System.out.println(queue);
         System.out.println("peeking head -> " + queue.peek());
-
     }
 }

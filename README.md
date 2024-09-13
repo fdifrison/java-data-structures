@@ -87,6 +87,8 @@ of a tree is represented by the number of layers, or the longest path between th
 
 ### Binary Search Trees
 
+* **find/insert/remove item: O(logN)** (with a worst case of O(N) in the case of imbalance tree)
+
 Binary search trees try to solve the common problem to arrays and linked lists, which is the O(n) complexity in
 retrieving an arbitrary value since we have potentially to traverse the whole container. BST instead reach O(logN)
 complexity by storing the elements in a sorted order. Having a sorted collection, we can always start to look at the
