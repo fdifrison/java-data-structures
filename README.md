@@ -106,4 +106,30 @@ logN) running time for searching and arbitrary element goes up to O(n) (we are b
 Due to the structure of BST also find the min and the max value of the container has O(logN) running time since they
 will always be respectively the leftmost and the rightmost leave node.
 
+## Associative arrays (map or dictionaries)
 
+Associative arrays are abstract data type composed of a collection of key-value pairs where each key has to be unique.
+At the cost of being unsorted collection of elements, we can reach O(1) running time for adding, removing and searching
+and element with the use of a hash function. The idea is to obtain random access using and underline array-like
+structure; the idea is that we have a hash function **h(x)** that is able to map the unique key (of any type) of each
+value to an index of the array. A good hash function is such if it generates few **Collisions**, i.e. generates the same
+index given two different key. However, collision can't be eliminated entirely and therefore must be handled.
+One (bad) way to resolve collision is called **Chaining**; essentially a linked list is used as a support DS for the
+index that contains multiple values. However, we hand up having consumed extra space to store the linked list, if many
+collision happens we will hand up with the linked list searching running time of O(n) instead of the wanted O(1).
+Therefore, a viable choice to handle collision is by using **Open Addressing** and there are many implementations; the
+basic idea is to try to find a new bucket (index) for the item that end up having a colliding key.
+The easiest implementation is called **linear probing** where essentially we keep looking at the next non-empty index.
+This approach has good performance since item are close to each other, but it is easily subjected to clustering, i.e.
+keys ends up colliding more and more often creating an uneven distribution of the keys in the underlying array.
+
+The probability **p(x)** of having a collision is defined as **Load Factor,** and it physiologically increases as the
+more item we insert in the hashtable. It is defined as the ration of the **number of item / size of the keys-array,**
+and it ranges from 0 to 1. A high load factor can increase the running time up to O(n) due to clustering and collisions.
+The LF is generally the discriminant by which we decide when to resize the hashtable, keeping the best balance between
+memory usage and running time complexity.
+
+N.B. the size of the underlying array of a hashtable should be a prime number in order to reduce at a minimum the number
+of collision by reducing the number of factors by the prima number itself (i.e. only the index that are a multiple of
+the array-size will end up in the same bucket). If the array size is 10, then the multiples of 2 and 5 (the two factors
+of 10) will be hashed into the same bucket, generating collisions.
